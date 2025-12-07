@@ -26,7 +26,7 @@ const errorMiddleware =async (err, req, res, next) => {
     error.statusCode = 400;
     } 
  
- res.statusCode(error.statusCode|| 500).json({success: false , error: error.message ||"Server Error 🏴☠️"})}
+ res.status(error.statusCode|| 500).json({success: false , error: error.message ||"Server Error 🏴☠️"})}
   catch(err){
     next(err);
   }

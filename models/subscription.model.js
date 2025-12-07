@@ -1,6 +1,6 @@
-Major Rishabh Singh SambyalMajor Rishabh Singh Sambyalimport mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
-const subscriptionSchema = new mongoose.Schema(
+ export const subscriptionSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -90,3 +90,5 @@ subscriptionSchema.pre('save', function (next) {
   next();
   
 });
+const Subscription = mongoose.model('Subscription', subscriptionSchema);
+export default Subscription();

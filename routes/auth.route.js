@@ -1,21 +1,14 @@
 import {Router} from 'express';
+import { signIn, signOut, signUp } from '../controllers/auth.controller.js';
 
 const authRouter = Router();
 
 // Route 1: sign-up
-authRouter.post("/sign-up", (req, res) => {
-    res.send({title:"This is a Sign-Up Page"});
-}); // <--- FIX: Added closing curly brace (}) and closing parenthesis ())
+authRouter.post("/sign-up", signUp); 
 
 // Route 2: sign-in
-authRouter.post("/sign-in", (req, res) => {
-    res.send({title:"This is a Sign-In Page"});
-}); // <--- FIX: Added closing curly brace (}) and closing parenthesis ())
+authRouter.post("/sign-in", signIn); 
 
 // Route 3: sign-out
-authRouter.post("/sign-out", (req, res) => {
-    res.send({title:"This is a Sign-Out Page"});
-}); // <--- FIX: Added closing curly brace (}) and closing parenthesis ())
-
-
+authRouter.post("/sign-out", signOut); 
 export default authRouter;
